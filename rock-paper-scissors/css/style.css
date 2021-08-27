@@ -18,3 +18,31 @@ hr {
   border-width: 1px;
   color: white;
 }
+
+.player-input-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 70px;
+}
+
+.btn {
+  font-size: 76px;
+  padding: 35px 45px 35px;
+  border: 2px solid #ffff;
+  border-radius: 50%;
+  text-decoration: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: white;
+  transition-duration: 0.3s;
+}
+
+
+.fas {
+  color: #FF5858;
+}
