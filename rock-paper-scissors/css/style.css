@@ -20,7 +20,7 @@ hr {
 }
 
 .player-input-container {
-  height: 100vh;
+  height: 40vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -45,4 +45,23 @@ hr {
 
 .fas {
   color: #FF5858;
+}
+
+.scoreboard {
+  text-align: center;
+  color: white;
+}
+
+#score-info {
+  font-size: 36px;
+}
+
+.score-container {
+  display: flex;
+  justify-content: center;
+  gap: 10vw;
+}
+
+.score p {
+  font-size: 24px;
 }
