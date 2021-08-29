@@ -19,6 +19,8 @@ hr {
   color: white;
 }
 
+/* INPUT */
+
 .player-input-container {
   height: 40vh;
   display: flex;
@@ -47,6 +49,8 @@ hr {
   color: #FF5858;
 }
 
+/* SCORE */
+
 .scoreboard {
   text-align: center;
   color: white;
@@ -65,3 +69,23 @@ hr {
 .score p {
   font-size: 24px;
 }
+
+/* FOOTER */
+
+footer {
+  color: white;
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  font-size: 24px;
+}
+
+#github {
+  color: white;
+}
+
+#github:hover {
+  opacity: 0.5;
+}
+
