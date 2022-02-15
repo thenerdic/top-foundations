@@ -4,7 +4,6 @@ const scissorsBtn = document.querySelector('#scissorsBtn');
 let gameResult = document.querySelector('.game-result');
 let playerScore = 0;
 let compScore = 0;
-let playerChoice;
 
 
 const getComputerChoice = (computerChoice) => {
