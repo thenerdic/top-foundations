@@ -70,6 +70,15 @@ hr {
   font-size: 24px;
 }
 
+/* game results */
+.game-result {
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-size: 32px;
+  font-weight: bold;
+}
+
 /* FOOTER */
 
 footer {

@@ -1,12 +1,11 @@
-const getPlayerChoice = (playerChoice) => {
-    //playerChoice = prompt("Type rock, paper, or scissors");
-    if (playerChoice === 'rock' || playerChoice === 'paper' || playerChoice === 'scissors') {
-        return playerChoice;
-    }
-    else {
-        return 'Invalid Option';
-    }
-}
+const rockBtn = document.querySelector('#rockBtn');
+const paperBtn = document.querySelector('#paperBtn');
+const scissorsBtn = document.querySelector('#scissorsBtn');
+let gameResult = document.querySelector('.game-result');
+let playerScore = 0;
+let compScore = 0;
+let playerChoice;
+
 
 const getComputerChoice = (computerChoice) => {
     computerChoice = Math.floor(Math.random() * 3);
@@ -21,33 +20,59 @@ const getComputerChoice = (computerChoice) => {
     }
 }
 
-const determineWinner = (playerChoice, computerChoice) => {
-    if (playerChoice === computerChoice) {
-        return 'Tie!';
+const playRound = (playerSelection, computerSelection) => {
+    if (playerSelection === computerSelection) {
+       gameResult.textContent = "It's a tie!";
     }
-    else if (playerChoice === 'rock' && computerChoice === 'scissors')
+    else if (playerSelection === 'rock' && computerSelection === 'scissors')
     {
-        return 'You Win!';
+        playerScore++;
+        gameResult.textContent = "You win this round!";
+        document.querySelector('.playerScore').textContent = playerScore;
     }
-    else if (playerChoice === 'paper' && computerChoice === 'rock')
+    else if (playerSelection === 'paper' && computerSelection === 'rock')
     {
-        return 'You Win!';
+        playerScore++;
+        gameResult.textContent = "You win this round!";
+        document.querySelector('.playerScore').textContent = playerScore;
     }
-    else if (playerChoice === 'scissors' && computerChoice === 'paper')
+    else if (playerSelection === 'scissors' && computerSelection === 'paper')
     {
-        return 'You Win!';
+        playerScore++;
+        gameResult.textContent = "You win this round!";
+        document.querySelector('.playerScore').textContent = playerScore;
     }
     else {
-        return 'Computer Wins!';
+        compScore++;
+        gameResult.textContent = "Computer wins this round!";
+        document.querySelector('.compScore').textContent = compScore;
     }
 }
 
-const playGame = () => {
-    const playerChoice = getPlayerChoice();
-    const computerChoice = getComputerChoice();
-    console.log('You threw ' + playerChoice);
-    console.log('Computer threw ' + computerChoice);
-    console.log(determineWinner(playerChoice, computerChoice));
+const game = (playerChoice) => {
+    let player = playerChoice;
+    let computer = getComputerChoice();
+
+    playRound(player, computer);
+
+    if (playerScore === 5) {
+        gameResult.textContent = "YOU WON!"
+    }
+    else if (compScore === 5)
+    {
+        gameResult.textContent = "YOU LOST TO A COMPUTER!";
+    }
 }
 
-playGame();
+/* event listeners */
+rockBtn.addEventListener('click', () => {
+    game("rock");
+});
+
+paperBtn.addEventListener('click', () => {
+    game("paper");
+});
+
+scissorsBtn.addEventListener('click', () => {
+    game("scissors");
+});
